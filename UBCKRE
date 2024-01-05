@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name ULTRAbc
+// @name UBCKRE
 // @namespace https://www.bondageprojects.com/
-// @version 2.5
+// @version 2.
 // @description Everything you'll ever need for BC
 // @author Nemesea
 // @match https://bondageprojects.elementfx.com/*
@@ -20,16 +20,16 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
 
 (async function() {
     if (window.UBCver) {
-        console.warn("ULTRAbc already loaded. No double loading");
+        console.warn("UBCKRE already loaded. No double loading");
         return;
     }
 
     const UBCver = "2.5";
     const modApi = bcModSDK.registerMod({
-        name: 'ULTRAbc',
+        name: 'UBCKRE',
         fullName: 'Ultra Bondage Club',
         version: UBCver,
-        repository: 'https://github.com/tetris245/ULTRAbc',
+        repository: 'https://github.com/tetris245/UBCKRE',
     });
 
     //Main variables and settings for UBC and The Moaner
@@ -507,7 +507,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 MoanerIsLoaded = true;
                 M_MOANER_initControls();
                 Player.UBC = UBCver;
-                console.log("ULTRAbc loaded: Version " + UBCver);
+                console.log("UBCKRE loaded: Version " + UBCver);
                 if (NPCpunish == true) {
                     Player.RestrictionSettings.BypassNPCPunishments = false;
                 } else {
@@ -1208,7 +1208,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
     //Login
     async function ULTRALoginRun() {
         modApi.hookFunction('LoginRun', 4, (args, next) => {
-            DrawButton(750, 120, 500, 60, "ULTRAbc " + UBCver + " Ready!", "Pink", "", "");
+            DrawButton(750, 120, 500, 60, "UBCKRE " + UBCver + " Ready!", "Pink", "", "");
             next(args);
         });
     }
@@ -1257,7 +1257,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             } else {
                 DrawButton(570, 475, 90, 90, "", "Gray", "Screens/Online/ChatSelect/Male.png", "Only Male");
             }
-	    DrawText("ULTRAbc", 130, 615, "White", "Black");
+	    DrawText("UBCKRE", 130, 615, "White", "Black");
             DrawText(UBCver, 140, 655, "White", "Black");
             DrawButton(240, 585, 420, 90, "", "White", "", "Open UBC Changelog on GitHub");
             DrawImageResize("Icons/Changelog.png", 250, 600, 60, 60);
@@ -1292,9 +1292,9 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 }
             }
 	    if (MouseIn(240, 585, 420, 90))
-                window.open('https://github.com/tetris245/ULTRAbc/releases', '_blank');
+                window.open('https://github.com/tetris245/UBCKRE/releases', '_blank');
             if (MouseIn(240, 695, 420, 90))
-                window.open('https://github.com/tetris245/ULTRAbc/wiki', '_blank');
+                window.open('https://github.com/tetris245/UBCKRE/wiki', '_blank');
             next(args);
         });
     }
@@ -1548,10 +1548,10 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
     async function ULTRAAppearanceRun() {
         modApi.hookFunction('AppearanceRun', 4, (args, next) => {
             if (CharacterAppearanceMode == "Wardrobe") {
-                DrawButton(1510, 240, 100, 60, "Export", "#50E992", "", "Full ULTRAbc Export");
+                DrawButton(1510, 240, 100, 60, "Export", "#50E992", "", "Full UBCKRE Export");
                 DrawButton(1630, 240, 100, 60, "Import1", "#50E992", "", "Clothing + Restraints");
                 DrawButton(1750, 240, 100, 60, "Import2", "#50E992", "", "Clothing + Restraints + Cosplay");
-                DrawButton(1870, 240, 100, 60, "Import3", "#50E992", "", "Full ULTRAbc Import");
+                DrawButton(1870, 240, 100, 60, "Import3", "#50E992", "", "Full UBCKRE Import");
             }
             next(args);
         });
@@ -1576,7 +1576,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             appall.push(app);
                         });
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Appearance saved.</p>\n" +
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Appearance saved.</p>\n" +
                             btoa(encodeURI(JSON.stringify(appall)))
                         );
                         DialogLeave();
@@ -4334,7 +4334,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if ((args === "") && (ReputationGet("Asylum") < 0)) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: You must specify minutes if you are a patient.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: You must specify minutes if you are a patient.</p>"
                 );
             } else {
                 var minutes = args;
@@ -4359,7 +4359,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: () => {
             if (this.AutoKickOn == false || this.AutoKickOn == undefined) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: AutoKick Ready.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: AutoKick Ready.</p>"
                 );
                 AutoKickOn = true;
                 AutoKicker = function(data, days = 1, hours = 12, minutes = 0) {
@@ -4387,7 +4387,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 AutoKickOn = false;
                 ServerSocket.off("ChatRoomMessage", AutoKicker);
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: AutoKick Disabled.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: AutoKick Disabled.</p>"
                 );
             }
         }
@@ -4781,7 +4781,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             ChatCreateBackgroundList = BackgroundsGenerateList(BackgroundsTagList);
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: You can use more standard backgrounds now.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: You can use more standard backgrounds now.</p>"
             );
         }
     }])
@@ -4792,7 +4792,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The bg2 command must be followed by a number. List of Bondage Brawl backgrounds:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The bg2 command must be followed by a number. List of Bondage Brawl backgrounds:\n" +
                     "1, 2 Balcony - 3 Ballroom - 4 to 12 Bandit Camp\n" +
                     "13 to 15 Barn - 16 to 18 Bathroom Olivia\n" +
                     "19 Bedroom Dungeon - 20 Bedroom Edward\n" +
@@ -5129,7 +5129,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The bg3 command must be followed by a number. List of Bondage College backgrounds:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The bg3 command must be followed by a number. List of Bondage College backgrounds:\n" +
                     "1 Art Class - 2, 3 Class - 4 Club\n" +
                     "5 College - 6 Dorm\n" +
                     "7 Dressing Room - 8 Gym Class\n" +
@@ -5273,7 +5273,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The blur command must be followed by a number between 0 and 4.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The blur command must be followed by a number between 0 and 4.\n" +
                     " \n" +
                     "Available blur levels:\n" +
                     "0 no blur effect\n" +
@@ -5286,7 +5286,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 var brlevel = args;
                 if (brlevel == 0) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: No more forced blur effect.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: No more forced blur effect.</p>"
                     );
                     blureffect = false;
                     Blur1On = false;
@@ -5296,7 +5296,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     M_MOANER_saveControls();
                 } else if (brlevel == 1) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Light blur effect enabled.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Light blur effect enabled.</p>"
                     );
                     blureffect = true;
                     Blur1On = true;
@@ -5306,7 +5306,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     M_MOANER_saveControls();
                 } else if (brlevel == 2) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Normal blur effect enabled.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Normal blur effect enabled.</p>"
                     );
                     blureffect = true;
                     Blur1On = false;
@@ -5316,7 +5316,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     M_MOANER_saveControls();
                 } else if (brlevel == 3) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Heavy blur effect enabled.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Heavy blur effect enabled.</p>"
                     );
                     blureffect = true;
                     Blur1On = false;
@@ -5326,7 +5326,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     M_MOANER_saveControls();
                 } else if (brlevel == 4) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Total blur effect enabled.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Total blur effect enabled.</p>"
                     );
                     blureffect = true;
                     Blur1On = false;
@@ -5351,7 +5351,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             SkillSetModifier(Player, "SelfBondage", +5, 3600000);
             SkillSetModifier(Player, "Willpower", +5, 3600000);
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: You feel all your skills boosted. Changes can be seen in information panel.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: You feel all your skills boosted. Changes can be seen in information panel.</p>"
             );
         }
     }])
@@ -5362,7 +5362,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The btalk command must be followed by the words you want to say.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The btalk command must be followed by the words you want to say.</p>"
                 );
             } else {
                 content = SpeechBabyTalk({
@@ -5382,7 +5382,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The carddesk command must be followed by a number between 0 and 8.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The carddesk command must be followed by a number between 0 and 8.\n" +
                     " \n" +
                     "Available desks:\n" +
                     "0 Original Default\n" +
@@ -5396,7 +5396,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     cdesk = desk;
                     M_MOANER_saveControls();
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Default desk changed for the Bondage Club Card Game.</p>"
+                        "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Default desk changed for the Bondage Club Card Game.</p>"
                     );
                 }
             }
@@ -5410,7 +5410,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             Player.Game.ClubCard.Reward = "";
             var Extra = [1015, 1017, 3008, 5005, 6005, 7007, 8005, 11000, 11001, 11002, 11003, 11008, 11009, 11010, 12000, 12001, 12002, 30012, 30013, 30021, 30022];
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: All extra cards of the Bondage Club Card Game now added.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: All extra cards of the Bondage Club Card Game now added.</p>"
             );
             for (let i = 0; i < Extra.length; i++) {
                 let Char = String.fromCharCode(Extra[i]);
@@ -5428,7 +5428,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The cardfame command must be followed by a number between 200 and 600.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The cardfame command must be followed by a number between 200 and 600.</p>"
                 );
             } else {
                 var fame = args;
@@ -5436,7 +5436,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     cfame = fame;
                     M_MOANER_saveControls();
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Fame level changed for the high fame mode of the Bondage Club Card Game.</p>"
+                        "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Fame level changed for the high fame mode of the Bondage Club Card Game.</p>"
                     );
                 }
             }
@@ -5453,7 +5453,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 );
             } else if (args === "yes") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: No more extra cards in the Bondage Club Card Game.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: No more extra cards in the Bondage Club Card Game.</p>"
                 );
                 Player.Game.ClubCard.Reward = "";
                 ServerAccountUpdate.QueueData({
@@ -5469,7 +5469,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The chess command must be followed by a number between 1 and 3.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The chess command must be followed by a number between 1 and 3.\n" +
                     " \n" +
                     "Available difficulty modes:\n" +
                     "1 easy\n" +
@@ -5654,7 +5654,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The colorchanger command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The colorchanger command:\n" +
                     "To preselect, two choices exist, type: <b>/colorchanger hair</b> or <b>/colorchanger eyes</b>\n" +
                     "To manually select area, type: <b>/colorchanger set</b> or <b>/colorchanger select</b> or <b>/colorchanger custom</b>\n" +
                     "Manual selection can only target 10 areas at a time,\n" +
@@ -5664,7 +5664,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if ((args === "custom") || (args === "set") || (args === "select")) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     if (CurrentCharacter.FocusGroup.Name) {
@@ -5744,7 +5744,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "eyes") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     if (CurrentCharacter) {
@@ -5767,7 +5767,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "hair") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     if (CurrentCharacter) {
@@ -5822,7 +5822,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Welcome to Bondage Club Diaper Wetter! Where we make sure babies use their diapers!\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Welcome to Bondage Club Diaper Wetter! Where we make sure babies use their diapers!\n" +
                     " \n" +
                     "The diaper command must include an action.\n" +
                     "You need to wear one or two layers of diapers (only bulky and poofy versions)\n" +
@@ -5840,7 +5840,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 );
             } else if (args === "custom") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Diaper customisation (before using /diaper start):\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Diaper customisation (before using /diaper start):\n" +
                     "<b>/diaper setdesperation</b> (value between 0 and 3) for desperation level, normally controlled by having a milk bottle used on you\n" +
                     "<b>/diaper setregression</b> (value between 0 and 3) for regression level, normally controlled by wearing Nursery Milk for an extended period of time\n" +
                     "<b>/diaper settimer</b> (minutes) to change the wet/mess timer\n" +
@@ -5866,13 +5866,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     if (targetname == null) {
                         if (InventoryGet(Player, "Panties") == null) {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have normal diapers!</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You don't have normal diapers!</p>"
                             );
                         } else if (InventoryGet(Player, "Panties").Asset.Name == "BulkyDiaper" || InventoryGet(Player, "Panties").Asset.Name === "PoofyDiaper") {
                             refreshDiaper("panties");
                         } else {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have normal diapers!</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You don't have normal diapers!</p>"
                             );
                         }
                     } else {
@@ -5889,7 +5889,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             }
                             if (InventoryGet(target[0], "Panties") == null) {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have normal diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have normal diapers!</p>"
                                 );
                             } else if (InventoryGet(target[0], "Panties").Asset.Name == "BulkyDiaper" || InventoryGet(target[0], "Panties").Asset.Name === "PoofyDiaper") {
                                 ChatRoomTargetMemberNumber = target[0].MemberNumber;
@@ -5917,7 +5917,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 document.querySelector('#TextAreaChatLog').lastChild.style.color = "silver";
                             } else {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have normal diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have normal diapers!</p>"
                                 );
                             }
                             ChatRoomSetTarget(null);
@@ -5929,13 +5929,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     if (targetname == null) {
                         if (InventoryGet(Player, "ItemPelvis") == null) {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have chastity diapers!</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You don't have chastity diapers!</p>"
                             );
                         } else if (InventoryGet(Player, "ItemPelvis").Asset.Name == "BulkyDiaper" || InventoryGet(Player, "ItemPelvis").Asset.Name === "PoofyDiaper") {
                             refreshDiaper("chastity");
                         } else {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have chastity diapers!</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You don't have chastity diapers!</p>"
                             );
                         }
                     } else {
@@ -5952,7 +5952,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             }
                             if (InventoryGet(target[0], "ItemPelvis") == null) {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have chastity diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have chastity diapers!</p>"
                                 );
                             } else if (InventoryGet(target[0], "ItemPelvis").Asset.Name == "BulkyDiaper" || InventoryGet(target[0], "ItemPelvis").Asset.Name === "PoofyDiaper") {
                                 ChatRoomTargetMemberNumber = target[0].MemberNumber;
@@ -5980,7 +5980,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 document.querySelector('#TextAreaChatLog').lastChild.style.color = "silver";
                             } else {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have chastity diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have chastity diapers!</p>"
                                 );
                             }
                             ChatRoomSetTarget(null);
@@ -5992,26 +5992,26 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     if (targetname == null) {
                         if ((InventoryGet(Player, "Panties") == null) && (InventoryGet(Player, "ItemPelvis") == null)) {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have a diaper! Get one on you before you make a mess!</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You don't have a diaper! Get one on you before you make a mess!</p>"
                             );
                         } else if ((InventoryGet(Player, "Panties") == null) && (InventoryGet(Player, "ItemPelvis") != null)) {
                             if (InventoryGet(Player, "ItemPelvis").Asset.Name == "BulkyDiaper" || InventoryGet(Player, "ItemPelvis").Asset.Name === "PoofyDiaper") {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have two layers of diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You don't have two layers of diapers!</p>"
                                 );
                             } else {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have a diaper! Get one on you before you make a mess!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You don't have a diaper! Get one on you before you make a mess!</p>"
                                 );
                             }
                         } else if ((InventoryGet(Player, "Panties") != null) && (InventoryGet(Player, "ItemPelvis") == null)) {
                             if (InventoryGet(Player, "Panties").Asset.Name == "BulkyDiaper" || InventoryGet(Player, "Panties").Asset.Name === "PoofyDiaper") {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have two layers of diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You don't have two layers of diapers!</p>"
                                 );
                             } else {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have a diaper! Get one on you before you make a mess!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You don't have a diaper! Get one on you before you make a mess!</p>"
                                 );
                             }
                         } else if ((InventoryGet(Player, "Panties") != null) && (InventoryGet(Player, "ItemPelvis") != null)) {
@@ -6020,7 +6020,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 refreshDiaper("both");
                             } else {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You don't have two layers of diapers!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You don't have two layers of diapers!</p>"
                                 );
                             }
                         }
@@ -6054,26 +6054,26 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             }
                             if ((InventoryGet(target[0], "Panties") == null) && (InventoryGet(target[0], "ItemPelvis") == null)) {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
                                 );
                             } else if ((InventoryGet(target[0], "Panties") == null) && (InventoryGet(target[0], "ItemPelvis") != null)) {
                                 if (InventoryGet(target[0], "ItemPelvis").Asset.Name == "BulkyDiaper" || InventoryGet(target[0], "ItemPelvis").Asset.Name === "PoofyDiaper") {
                                     ChatRoomSendLocal(
-                                        "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have two layers of diapers!</p>"
+                                        "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have two layers of diapers!</p>"
                                     );
                                 } else {
                                     ChatRoomSendLocal(
-                                        "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
+                                        "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
                                     );
                                 }
                             } else if ((InventoryGet(target[0], "Panties") != null) && (InventoryGet(target[0], "ItemPelvis") == null)) {
                                 if (InventoryGet(target[0], "Panties").Asset.Name == "BulkyDiaper" || InventoryGet(target[0], "Panties").Asset.Name === "PoofyDiaper") {
                                     ChatRoomSendLocal(
-                                        "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have two layers of diapers!</p>"
+                                        "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have two layers of diapers!</p>"
                                     );
                                 } else {
                                     ChatRoomSendLocal(
-                                        "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
+                                        "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have a diaper! Get one on " + tgpr2 + " before " + tgpr4 + " makes a mess!</p>"
                                     );
                                 }
                             } else if ((InventoryGet(target[0], "Panties") != null) && (InventoryGet(target[0], "ItemPelvis") != null)) {
@@ -6104,7 +6104,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                     document.querySelector('#TextAreaChatLog').lastChild.style.color = "silver";
                                 } else {
                                     ChatRoomSendLocal(
-                                        "<p style='background-color:#5fbd7a'>ULTRAbc: " + tgpname + " does not have two layers of diapers!</p>"
+                                        "<p style='background-color:#5fbd7a'>UBCKRE: " + tgpname + " does not have two layers of diapers!</p>"
 
                                     );
                                 }
@@ -6118,7 +6118,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     diaperDefaultValues.desperationLevel = setchange;
                     setchange = "";
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Your desperation level has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Your desperation level has been changed.</p>"
                     );
                 }
                 if (feature == "setmesschance") {
@@ -6126,7 +6126,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     diaperDefaultValues.messChance = setchange;
                     setchange = "";
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Your chance to mess diapers has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Your chance to mess diapers has been changed.</p>"
                     );
                 }
                 if (feature == "setmess1") {
@@ -6137,7 +6137,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 diaperDefaultValues.messLevelInner = setchange;
                                 setchange = "";
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Your mess level for normal diapers has been changed.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Your mess level for normal diapers has been changed.</p>"
                                 );
                             }
                         }
@@ -6151,7 +6151,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 diaperDefaultValues.messLevelOuter = setchange;
                                 setchange = "";
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Your mess level for chastity diapers has been changed.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Your mess level for chastity diapers has been changed.</p>"
                                 );
                             }
                         }
@@ -6162,7 +6162,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     diaperDefaultValues.regressionLevel = setchange;
                     setchange = "";
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Your regression level has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Your regression level has been changed.</p>"
                     );
                 }
                 if (feature == "settimer") {
@@ -6170,7 +6170,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     diaperDefaultValues.baseTimer = setchange;
                     setchange = "";
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Your wet/mess timer has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Your wet/mess timer has been changed.</p>"
                     );
                 }
                 if (feature == "setwetchance") {
@@ -6178,7 +6178,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     diaperDefaultValues.wetChance = setchange;
                     setchange = "";
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Your chance to wet diapers has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Your chance to wet diapers has been changed.</p>"
                     );
                 }
                 if (feature == "setwet1") {
@@ -6189,7 +6189,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 diaperDefaultValues.wetLevelInner = setchange;
                                 setchange = "";
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Your wet level for normal diapers has been changed.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Your wet level for normal diapers has been changed.</p>"
                                 );
                             }
                         }
@@ -6203,7 +6203,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                                 diaperDefaultValues.wetLevelOuter = setchange;
                                 setchange = "";
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Your wet level for chastity diapers has been changed.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Your wet level for chastity diapers has been changed.</p>"
                                 );
                             }
                         }
@@ -6219,7 +6219,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The difficulty command must be followed by a number between 0 and 3.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The difficulty command must be followed by a number between 0 and 3.\n" +
                     " \n" +
                     "Available difficulty modes:\n" +
                     "0 roleplay\n" +
@@ -6257,7 +6257,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The font command must be followed by a font number and optionally a size number.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The font command must be followed by a font number and optionally a size number.\n" +
                     "The effect will be visible in the chat after an automatic relog.\n" +
                     "Supported fonts: 0 Arial - 1 Times New Roman\n" +
                     "2 Papyrus - 3 Comic Sans - 4 Impact\n" +
@@ -6296,7 +6296,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The frlist command must be followed by the lobby for which you want to have clickable links.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The frlist command must be followed by the lobby for which you want to have clickable links.\n" +
                     "Available options: asylum, fclub, mclub, xclub.</p>"
                 );
             }
@@ -6347,7 +6347,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     }, 15000);
                 } else {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Only females have access to this lobby.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Only females have access to this lobby.</p>"
                     );
                 }
             }
@@ -6377,7 +6377,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     }, 15000);
                 } else {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Only males have access to this lobby.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Only males have access to this lobby.</p>"
                     );
                 }
             }
@@ -6411,7 +6411,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The game command must include a minigame.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The game command must include a minigame.\n" +
                     "Available minigames:\n" +
                     "carrot, cleaning, dojo, drinks, hurdle, kidnap, movie1,\n" +
                     "movie2, puppy, rhythm, training, whippony.\n" +
@@ -6529,7 +6529,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The ggts command must be followed by two numbers to  specify minutes and level (1-6).<p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The ggts command must be followed by two numbers to  specify minutes and level (1-6).<p>"
                 );
             } else {
                 var stringGgts1 = args;
@@ -6559,7 +6559,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Description: ": gives every item.",
         Action: () => {
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: Every item in the game now added.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: Every item in the game now added.</p>"
             );
             AssetFemale3DCG.forEach(group => group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group)));
             ServerPlayerInventorySync();
@@ -6572,7 +6572,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The gtalk command must be followed by a number between 1 and 9, then the words you want to say.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The gtalk command must be followed by a number between 1 and 9, then the words you want to say.\n" +
                     " \n" +
                     "Available talk modes:\n" +
                     "1 very light gag talk\n" +
@@ -6612,7 +6612,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The hdvibe command must be followed by 5 numbers for crotch shield, back shield, modules, intensity and orgasm mode.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The hdvibe command must be followed by 5 numbers for crotch shield, back shield, modules, intensity and orgasm mode.\n" +
                     " \n" +
                     "Available crotch shields:\n" +
                     "0 Open - 1 Transparent - 2 Metal\n" +
@@ -6646,7 +6646,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             HeavyDutyBelt.Property = ModularItemMergeModuleValues(HeavyDutyBeltConfig, [chd, bhd, mhd, ihd, ohd]);
                             ChatRoomCharacterUpdate(Player);
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: The settings of your Heavy Duty Belt have been modified.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: The settings of your Heavy Duty Belt have been modified.</p>"
                             );
                         }
                     }
@@ -6661,7 +6661,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The hear command must be followed by a number between 0 and 4.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The hear command must be followed by a number between 0 and 4.\n" +
                     "Notes:\n" +
                     "- a full relog is requested to leave this forced hearing mode\n" +
                     "- this command can trigger a BCX warning. Just ignore it (close the breaking message)!\n" +
@@ -6679,35 +6679,35 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     GetDeafLevel0();
                     Player.GetDeafLevel = GetDeafLevel0;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Back to normal hearing mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Back to normal hearing mode.</p>"
                     );
                 }
                 if (dl == 1) {
                     GetDeafLevel1();
                     Player.GetDeafLevel = GetDeafLevel1;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in light deafness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in light deafness mode.</p>"
                     );
                 }
                 if (dl == 2) {
                     GetDeafLevel2();
                     Player.GetDeafLevel = GetDeafLevel2;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in normal deafness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in normal deafness mode.</p>"
                     );
                 }
                 if (dl == 3) {
                     GetDeafLevel3();
                     Player.GetDeafLevel = GetDeafLevel3;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in heavy deafness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in heavy deafness mode.</p>"
                     );
                 }
                 if (dl == 4) {
                     GetDeafLevel4();
                     Player.GetDeafLevel = GetDeafLevel4;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in total deafness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in total deafness mode.</p>"
                     );
                 }
             }
@@ -6721,7 +6721,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             var [targetname] = args;
             if (!targetname) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The hint command must be followed by a target and the hint you want to add to locks with password.<p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The hint command must be followed by a target and the hint you want to add to locks with password.<p>"
                 );
             } else {
                 var [, , ...message] = command.split(" ");
@@ -6766,7 +6766,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: () => {
 	    if (Player.OnlineSharedSettings.ScriptPermissions.Hide.permission == 0) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: To use the invisible command, you need first to allow Scripts in BC settings.<p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: To use the invisible command, you need first to allow Scripts in BC settings.<p>"
                 );
             } else {    
                 ServerSend("ChatRoomChat", {
@@ -6871,7 +6871,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The itemcolor command must be followed by a color code in the format #000000 and optionally a target.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The itemcolor command must be followed by a color code in the format #000000 and optionally a target.</p>"
                 );
             } else {
                 var stringItc1 = args;
@@ -6952,7 +6952,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 TestMode = true;
                 KDDebugMode = true;
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: KD Debug mode enabled</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: KD Debug mode enabled</p>"
                 );
             } else if (args === "devious") {
                 if (this.DeviousOn == undefined || this.DeviousOn == false) {
@@ -6960,14 +6960,14 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     ArcadeDeviousChallenge = true;
                     LogAdd("DeviousChallenge", "Arcade", 1, true);
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Devious Challenge enabled</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Devious Challenge enabled</p>"
                     );
                 } else {
                     DeviousOn = false;
                     ArcadeDeviousChallenge = false;
                     LogDelete("DeviousChallenge", "Arcade", true);
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Devious Challenge disabled</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Devious Challenge disabled</p>"
                     );
                 }
             } else {
@@ -7423,7 +7423,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             } else if (args === "yes") {
                 M_MOANER_deleteControls();
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: All UBC/Moaner parameters have been deleted. Make a full logout/login then use the appropriate commands to set the parameters that you like.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: All UBC/Moaner parameters have been deleted. Make a full logout/login then use the appropriate commands to set the parameters that you like.</p>"
                 );
             }
         }
@@ -7435,7 +7435,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The lock command has several syntaxes:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The lock command has several syntaxes:\n" +
                     "/lock (target) (locktype) for locks 1 to 8 + locks 17 and 19\n" +
                     "/lock (target) (locktype) (r) for lock 9\n" +
                     "/lock (target) (locktype) (code/ptcode) for locks 10 and 20\n" +
@@ -7455,7 +7455,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 );
             } else if (args === "par") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Special parameters of lock command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Special parameters of lock command:\n" +
                     "code must be between 0 and 9999.\n" +
                     "password is limited to 8 characters.\n" +
                     "portal code must include 8 characters, using only 0-9 and a-f.\n" +
@@ -7703,7 +7703,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The login command must be followed by an account name and a password.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The login command must be followed by an account name and a password.</p>"
                 );
             } else {
                 var stringLogin1 = args;
@@ -7746,7 +7746,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             LogAdd("BondageCollege", "Import");
             LogAdd("KidnapSophie", "Sarah");
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: A few things have to be set manually. See the /roleplay and /rolequit commands.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: A few things have to be set manually. See the /roleplay and /rolequit commands.</p>"
             );
         }
     }])
@@ -7816,7 +7816,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             var [option] = args;
             if (!option) {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The message command must be followed by a command and the message you want instead of the default message.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The message command must be followed by a command and the message you want instead of the default message.\n" +
                     "Options on yourself: clothes, lock, naked, pet, randomize, restrain, solidity, totalrelease, underwear, unlock, untie\n" +
                     "Options on other players: tclothes, tlock, tnaked, tpet, trandomize, trestrain, tsolidity, ttotalrelease, tunderwear, tunlock, tuntie\n" +
                     " \n" +
@@ -7834,19 +7834,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Clothes = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for clothes command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for clothes command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Clothes = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for clothes command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for clothes command on yourself.</p>"
                             );
                         } else {
                             Clothes = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for clothes command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for clothes command on yourself.</p>"
                             );
                         } 
                     }
@@ -7855,19 +7855,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Mlock = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for lock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for lock command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Mlock = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for lock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for lock command on yourself.</p>"
                             );
                         } else {
                             Mlock = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for lock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for lock command on yourself.</p>"
                             );
                         } 
                     }
@@ -7876,19 +7876,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Naked = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for naked command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for naked command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Naked = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for naked command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for naked command on yourself.</p>"
                             );
                         } else {
                             Naked = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for naked command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for naked command on yourself.</p>"
                             );
                         } 
                     }
@@ -7897,19 +7897,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Pet = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for pet command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for pet command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Pet = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for pet command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for pet command on yourself.</p>"
                             );
                         } else {
                             Pet = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for pet command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for pet command on yourself.</p>"
                             );
                         } 
                     }
@@ -7918,19 +7918,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Randomize = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for randomize command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for randomize command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Randomize = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for randomize command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for randomize command on yourself.</p>"
                             );
                         } else {
                             Randomize = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for randomize command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for randomize command on yourself.</p>"
                             );
                         } 
                     }
@@ -7939,19 +7939,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Restrain = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for restrain command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for restrain command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Restrain = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for restrain command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for restrain command on yourself.</p>"
                             );
                         } else {
                             Restrain = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for restrain command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for restrain command on yourself.</p>"
                             );
                         } 
                     }
@@ -7960,19 +7960,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Solidity = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for solidity command to escape yourself special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for solidity command to escape yourself special devices.</p>"
                             ); 
                         } else if (custom == "?") {
                             Solidity = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for solidity command to escape yourself special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for solidity command to escape yourself special devices.</p>"
                             );
                         } else {
                             Solidity = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for solidity command to escape yourself special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for solidity command to escape yourself special devices.</p>"
                             );
                         } 
                     }
@@ -7981,19 +7981,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tclothes = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for clothes command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for clothes command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tclothes = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for clothes command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for clothes command on other players.</p>"
                             );
                         } else {
                             Tclothes = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for clothes command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for clothes command on other players.</p>"
                             );
                         } 
                     }
@@ -8002,19 +8002,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tlock = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for lock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for lock command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tlock = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for lock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for lock command on other players.</p>"
                             );
                         } else {
                             Tlock = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for lock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for lock command on other players.</p>"
                             );
                         } 
                     }
@@ -8023,19 +8023,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tnaked = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for naked command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for naked command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tnaked = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for naked command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for naked command on other players.</p>"
                             );
                         } else {
                             Tnaked = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for naked command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for naked command on other players.</p>"
                             );
                         } 
                     }
@@ -8044,19 +8044,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Totalrelease = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for totalrelease command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for totalrelease command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Totalrelease = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for totalrelease command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for totalrelease command on yourself.</p>"
                             );
                         } else {
                             Totalrelease = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for totalrelease command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for totalrelease command on yourself.</p>"
                             );
                         } 
                     }
@@ -8065,19 +8065,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tpet = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for pet command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for pet command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tpet = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for pet command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for pet command on other players.</p>"
                             );
                         } else {
                             Tpet = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for pet command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for pet command on other players.</p>"
                             );
                         } 
                     }
@@ -8086,19 +8086,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Trandomize = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for randomize command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for randomize command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Trandomize = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for randomize command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for randomize command on other players.</p>"
                             );
                         } else {
                             Trandomize = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for randomize command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for randomize command on other players.</p>"
                             );
                         } 
                     }
@@ -8107,19 +8107,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Trestrain = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for restrain command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for restrain command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Trestrain = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for restrain command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for restrain command on other players.</p>"
                             );
                         } else {
                             Trestrain = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for restrain command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for restrain command on other players.</p>"
                             );
                         } 
                     }
@@ -8128,19 +8128,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tsolidity = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for solidity command when helping another player to escape special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for solidity command when helping another player to escape special devices.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tsolidity = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for solidity command when helping another player to escape special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for solidity command when helping another player to escape special devices.</p>"
                             );
                         } else {
                             Tsolidity = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for solidity command when helping another player to escape special devices.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for solidity command when helping another player to escape special devices.</p>"
                             );
                         } 
                     }
@@ -8149,19 +8149,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Ttotalrelease = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for totalrelease command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for totalrelease command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Ttotalrelease = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for totalrelease command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for totalrelease command on other players.</p>"
                             );
                         } else {
                             Ttotalrelease = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for totalrelease command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for totalrelease command on other players.</p>"
                             );
                         } 
                     }
@@ -8170,19 +8170,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tunderwear = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for underwear command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for underwear command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tunderwear = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for underwear command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for underwear command on other players.</p>"
                             );
                         } else {
                             Tunderwear = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for underwear command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for underwear command on other players.</p>"
                             );
                         } 
                     }
@@ -8191,19 +8191,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tunlock = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for unlock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for unlock command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tunlock = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for unlock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for unlock command on other players.</p>"
                             );
                         } else {
                             Tunlock = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for unlock command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for unlock command on other players.</p>"
                             );
                         } 
                     }
@@ -8212,19 +8212,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Tuntie = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for untie command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for untie command on other players.</p>"
                             ); 
                         } else if (custom == "?") {
                             Tuntie = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for untie command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for untie command on other players.</p>"
                             );
                         } else {
                             Tuntie = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for untie command on other players.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for untie command on other players.</p>"
                             );
                         } 
                     }
@@ -8233,19 +8233,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Underwear = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for underwear command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for underwear command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Underwear = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for underwear command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for underwear command on yourself.</p>"
                             );
                         } else {
                             Underwear = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for underwear command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for underwear command on yourself.</p>"
                             );
                         } 
                     }
@@ -8254,19 +8254,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Unlock = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for unlock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for unlock command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Unlock = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for unlock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for unlock command on yourself.</p>"
                             );
                         } else {
                             Unlock = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for unlock command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for unlock command on yourself.</p>"
                             );
                         } 
                     }
@@ -8275,19 +8275,19 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Untie = "no message";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Silent mode saved for untie command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Silent mode saved for untie command on yourself.</p>"
                             ); 
                         } else if (custom == "?") {
                             Untie = "";
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: Back to default message for untie command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: Back to default message for untie command on yourself.</p>"
                             );
                         } else {
                             Untie = custom;
                             M_MOANER_saveControls();
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: New message saved for untie command on yourself.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: New message saved for untie command on yourself.</p>"
                             );
                         } 
                     }                    
@@ -8302,7 +8302,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The mission command must include a mission.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The mission command must include a mission.\n" +
                     "Available missions:\n" +
                     "burglar, kidnap, rescue, retrieve, sabotage.\n" +  
                     "Full random mission with random.</p>"                                     
@@ -8343,7 +8343,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Several actions are possible with the moaner command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Several actions are possible with the moaner command:\n" +
                     "<b>/moaner on</b> = starts the moaner\n" +
                     "<b>/moaner off</b> = stops the moaner\n" +
                     "<b>/moaner profile</b> (profilename) =  selects a moaner profile. Without profilename, access to moaner profile help\n" +
@@ -8489,7 +8489,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Options for outfit command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Options for outfit command:\n" +
                     "<b>All these options include the restraints</b>, so it's also a good bondage tool.\n" +
                     "To restore your outfit to what it was before entering room, type: <b>/outfit reset</b> or <b>/outfit restore</b> or <b>/outfit revert</b>\n" +
                     "Three outfits can be saved by using <b>/outfit save1</b> or <b>/outfit save2</b> or <b>/outfit save3</b>\n" +
@@ -8503,7 +8503,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "load1") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     CurrentCharacter.Appearance = this.savedoutfit1.slice(0);
@@ -8514,7 +8514,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "load2") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     CurrentCharacter.Appearance = savedoutfit2.slice(0);
@@ -8525,7 +8525,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "load3") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be loaded. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     CurrentCharacter.Appearance = savedoutfit3.slice(0);
@@ -8541,7 +8541,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "save1") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     this.savedoutfit1 = CurrentCharacter.Appearance.slice(0);
@@ -8550,7 +8550,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "save2") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     this.savedoutfit2 = CurrentCharacter.Appearance.slice(0);
@@ -8559,7 +8559,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "save3") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target. If successful, the outfit will be saved. If not, retry.</p>"
                 );
                 setTimeout(function() {
                     this.savedoutfit3 = CurrentCharacter.Appearance.slice(0);
@@ -8575,7 +8575,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The permission command must be followed by a number.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The permission command must be followed by a number.\n" +
                     "The effect will be visible in your profile.\n" +
                     "0 Everyone, no exceptions\n" +
                     "1 Everyone, except blacklist\n" +
@@ -8692,7 +8692,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The plvibe command must be followed by 4 numbers for crotch shield, intensity, orgasm mode and shock level.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The plvibe command must be followed by 4 numbers for crotch shield, intensity, orgasm mode and shock level.\n" +
                     " \n" +
                     "Available crotch shields: \n" +
                     "0 No shield - 1 Front shield\n" +
@@ -8722,7 +8722,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             SciFiPleasurePanties.Property = ModularItemMergeModuleValues(SciFiPleasurePantiesConfig, [cpl, ipl, opl, spl]);
                             ChatRoomCharacterUpdate(Player);
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: The settings of your Sci-Fi Pleasure Panties have been modified.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: The settings of your Sci-Fi Pleasure Panties have been modified.</p>"
                             );
                         }
                     }
@@ -8758,7 +8758,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The pose2 command must be followed by a pose and optionally a target.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The pose2 command must be followed by a pose and optionally a target.\n" +
                     " \n" +
                     "Available poses:\n" +
                     "armsfree, belly, boxtied, cuffed, elbowtied,\n" +
@@ -9069,7 +9069,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             }]
                         });
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: To leave this position, use first /pose2 jump, then /pose2 reset (or /pose baseupper if FBC enabled).</p>"
+                            "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: To leave this position, use first /pose2 jump, then /pose2 reset (or /pose baseupper if FBC enabled).</p>"
                         );
                         CharacterSetFacialExpression(Player, "Emoticon", "Annoyed", 1);
                         CharacterSetActivePose(Player, null);
@@ -9127,7 +9127,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             Region = "ItemPelvis";
                         } else {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You're too heavily tied to exercise.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You're too heavily tied to exercise.</p>"
                             );
                         }
                         ServerSend("ChatRoomChat", {
@@ -9802,7 +9802,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The reputation command must be followed by a reputation and a level.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The reputation command must be followed by a reputation and a level.\n" +
                     "You will be able to check the change in your profile.\n" +
                     " \n" +
                     "Available reputations:\n" +
@@ -9876,7 +9876,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             } else if (args === "yes") {
                 Player.Difficulty = [];
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: Difficulty reset, select a new one in settings.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: Difficulty reset, select a new one in settings.</p>"
                 );
             }
         }
@@ -9894,7 +9894,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 Player.Inventory = [];
                 ServerPlayerInventorySync();
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: Accomplished. Visit store to buy new clothes and items.</p>"
+                    "<p style='background-color:#5fbd7a'>UBCKRE: Accomplished. Visit store to buy new clothes and items.</p>"
                 );
             }
         }
@@ -9980,7 +9980,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The roleplay command must include a role.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The roleplay command must include a role.\n" +
                     "You will be able to check the changes in your profile.\n" +
                     " \n" +
                     "Available roles:\n" +
@@ -10079,7 +10079,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The rolequit command must include a role or clubarea.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The rolequit command must include a role or clubarea.\n" +
                     "You will be able to check the changes in your profile.\n" +
                     " \n" +
                     "Available roles or areas:\n" +
@@ -10136,7 +10136,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The s1 command must be followed by the words you want to say.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The s1 command must be followed by the words you want to say.</p>"
                 );
             } else {
                 content = StutterTalk1(args);
@@ -10154,7 +10154,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The s2 command must be followed by the words you want to say.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The s2 command must be followed by the words you want to say.</p>"
                 );
             } else {
                 content = StutterTalk2(args);
@@ -10172,7 +10172,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The s3 command must be followed by the words you want to say.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The s3 command must be followed by the words you want to say.</p>"
                 );
             } else {
                 content = StutterTalk3(args);
@@ -10190,7 +10190,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The s4 command must be followed by the words you want to say.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The s4 command must be followed by the words you want to say.</p>"
                 );
             } else {
                 content = StutterTalk4(args);
@@ -10207,7 +10207,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Description: ": removes specific item.",
         Action: () => {
             ChatRoomSendLocal(
-                "<p style='background-color:#5fbd7a'>ULTRAbc: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
+                "<p style='background-color:#5fbd7a'>UBCKRE: You have 5 seconds to click on target, select area. If successful, will be returned. If not, retry.</p>"
             );
             setTimeout(function() {
                 CurrentCharacter.Appearance = CurrentCharacter.Appearance.filter(x => (CurrentCharacter.FocusGroup && CurrentCharacter.FocusGroup.Name) ? x.Asset.Group.Name !=
@@ -10224,7 +10224,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The search command must be followed by the lobby you want to explore.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The search command must be followed by the lobby you want to explore.\n" +
                     "Available options: asylum, fclub, mclub, xclub.</p>"
                 );
             }
@@ -10265,7 +10265,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     }, 15000);
                 } else {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Only females have access to this lobby.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Only females have access to this lobby.</p>"
                     );
                 }
             }
@@ -10288,7 +10288,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     }, 15000);
                 } else {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Only males have access to this lobby.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Only males have access to this lobby.</p>"
                     );
                 }
             }
@@ -10316,7 +10316,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The see command must be followed by a vision mode number and optionally a blur level number.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The see command must be followed by a vision mode number and optionally a blur level number.\n" +
                     "Notes:\n" +
                     "- a full relog is requested to leave this forced vision mode\n" +
                     "- this command can trigger a BCX warning. Just ignore it (close the breaking message)!\n" +
@@ -10343,63 +10343,63 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     GetBlindLevel0();
                     Player.GetBlindLevel = GetBlindLevel0;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Back to normal vision mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Back to normal vision mode.</p>"
                     );
                 }
                 if (bl == 1) {
                     GetBlindLevel1();
                     Player.GetBlindLevel = GetBlindLevel1;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in light blindness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in light blindness mode.</p>"
                     );
                 }
                 if (bl == 2) {
                     GetBlindLevel2();
                     Player.GetBlindLevel = GetBlindLevel2;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in normal blindness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in normal blindness mode.</p>"
                     );
                 }
                 if (bl == 3) {
                     GetBlindLevel3();
                     Player.GetBlindLevel = GetBlindLevel3;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in heavy blindness mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in heavy blindness mode.</p>"
                     );
                 }
                 if (br == 0) {
                     GetBlurLevel0();
                     Player.GetBlurLevel = GetBlurLevel0;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Back to vision without blur effect.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Back to vision without blur effect.</p>"
                     );
                 }
                 if (br == 1) {
                     GetBlurLevel1();
                     Player.GetBlurLevel = GetBlurLevel1;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: A light blur effect is applied on your vision.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: A light blur effect is applied on your vision.</p>"
                     );
                 }
                 if (br == 2) {
                     GetBlurLevel2();
                     Player.GetBlurLevel = GetBlurLevel2;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: A normal blur effect is applied on your vision.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: A normal blur effect is applied on your vision.</p>"
                     );
                 }
                 if (br == 3) {
                     GetBlurLevel3();
                     Player.GetBlurLevel = GetBlurLevel3;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: A heavy blur effect is applied on your vision.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: A heavy blur effect is applied on your vision.</p>"
                     );
                 }
                 if (br == 4) {
                     GetBlurLevel4();
                     Player.GetBlurLevel = GetBlurLevel4;
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: A total blur effect is applied on your vision.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: A total blur effect is applied on your vision.</p>"
                     );
                 }
             }
@@ -10412,7 +10412,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The sfchaste command must be followed by 5 numbers for model, front shield, back shield, tamper protection and orgasm mode.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The sfchaste command must be followed by 5 numbers for model, front shield, back shield, tamper protection and orgasm mode.\n" +
                     " \n" +
                     "Available models: \n" +
                     "0 Prototype - 1 High-Security\n" +
@@ -10446,7 +10446,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             FuturisticChastityBelt.Property = ModularItemMergeModuleValues(FuturisticChastityBeltConfig, [msf, fsf, bsf, tsf, osf]);
                             ChatRoomCharacterUpdate(Player);
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: The settings of your Futuristic Chastity Belt have been modified.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: The settings of your Futuristic Chastity Belt have been modified.</p>"
                             );
                         }
                     }
@@ -10461,7 +10461,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The skill command must be followed by a skill and a level.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The skill command must be followed by a skill and a level.\n" +
                     "You will be able to check the change in your profile.\n" +
                     " \n" +
                     "Available skills:\n" +
@@ -10592,7 +10592,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The solidity command must be followed by a number between 1 and 99, and optionally a target. </p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The solidity command must be followed by a number between 1 and 99, and optionally a target. </p>"
                 );
             } else {
                 var stringSol1 = args;
@@ -10638,7 +10638,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         } 
                     ChatRoomCharacterUpdate(Player);
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: The solidity of most current bindings has been changed.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: The solidity of most current bindings has been changed.</p>"
                     );
                 } else {
                     var target = ChatRoomCharacter.filter(A => (A.Name.toLowerCase().startsWith(targetname.toLowerCase())));
@@ -10710,7 +10710,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The spin command must be followed by the target whose wheel of fortune interests you.</p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The spin command must be followed by the target whose wheel of fortune interests you.</p>"
                 );
             } else {
                 var targetname = args;
@@ -10722,7 +10722,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 if (target[0] != null) {
                     if (!InventoryAvailable(target[0], "WheelFortune", "ItemDevices")) {
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Bad luck! This player does not have a wheel of fortune.</p>"
+                            "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Bad luck! This player does not have a wheel of fortune.</p>"
                         );
                     } else {
                         CurrentCharacter = target[0];
@@ -10760,7 +10760,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The stutter command must be followed by a number between 0 and 4.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The stutter command must be followed by a number between 0 and 4.\n" +
                     " \n" +
                     "Available stuttering modes:\n" +
                     "0 no stuttering\n" +
@@ -10774,7 +10774,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 ElementValue("InputChat", "");
                 if (stlevel == 0) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: No more stuttering.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: No more stuttering.</p>"
                     );
                     Stutter1On = false;
                     Stutter2On = false;
@@ -10782,7 +10782,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     Stutter4On = false;
                 } else if (stlevel == 1) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in light stuttering mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in light stuttering mode.</p>"
                     );
                     Stutter1On = true;
                     Stutter2On = false;
@@ -10790,7 +10790,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     Stutter4On = false;
                 } else if (stlevel == 2) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in normal stuttering mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in normal stuttering mode.</p>"
                     );
                     Stutter1On = false;
                     Stutter2On = true;
@@ -10798,7 +10798,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     Stutter4On = false;
                 } else if (stlevel == 3) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in heavy stuttering mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in heavy stuttering mode.</p>"
                     );
                     Stutter1On = false;
                     Stutter2On = false;
@@ -10806,7 +10806,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     Stutter4On = false;
                 } else if (stlevel == 4) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in total stuttering mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in total stuttering mode.</p>"
                     );
                     Stutter1On = false;
                     Stutter2On = false;
@@ -10823,7 +10823,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The superdice command must be followed by a number between 2 and 999999999.<p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The superdice command must be followed by a number between 2 and 999999999.<p>"
                 );
             } else {
                 var sides = args;
@@ -10849,7 +10849,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The talk command must be followed by a number between -1 and 9.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The talk command must be followed by a number between -1 and 9.\n" +
                     " \n" +
                     "Available talk modes:\n" +
                     "-1 baby talk\n" +
@@ -10870,7 +10870,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 if (gaglevel == -1) {
                     if (this.BabyTalkOn == false || this.BabyTalkOn == undefined) {
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in baby talk mode.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: You are now in baby talk mode.</p>"
                         );
                         GagTalkOn = false;
                         BabyTalkOn = true;
@@ -10878,7 +10878,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 }
                 if (gaglevel == 0) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: Back to normal talk mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: Back to normal talk mode.</p>"
                     );
                     BabyTalkOn = false;
                     GagTalkOn = false;
@@ -10894,7 +10894,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         GagTalkOn = true;
                     }
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in gag talk mode.</p>"
+                        "<p style='background-color:#5fbd7a'>UBCKRE: You are now in gag talk mode.</p>"
                     );
                 }
                 if (gaglevel == 9) {
@@ -10911,7 +10911,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     if (bl == 1) {
                         if (this.BabyTalkOn == false || this.BabyTalkOn == undefined) {
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in real baby talk mode.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: You are now in real baby talk mode.</p>"
                             );
                             GagTalkOn = false;
                             BabyTalkOn = true;
@@ -10923,12 +10923,12 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             if (gl == 0) {
                                 GagTalkOn = false;
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Back to normal talk mode.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Back to normal talk mode.</p>"
                                 );
                             } else {
                                 GagTalkOn = true;
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in real gag talk mode.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You are now in real gag talk mode.</p>"
                                 );
                             }
                         } else {
@@ -10936,12 +10936,12 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             gl = SpeechGetTotalGagLevel(Player);
                             if (gl == 0) {
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: Back to normal talk mode.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: Back to normal talk mode.</p>"
                                 );
                             } else {
                                 GagTalkOn = true;
                                 ChatRoomSendLocal(
-                                    "<p style='background-color:#5fbd7a'>ULTRAbc: You are now in real gag talk mode.</p>"
+                                    "<p style='background-color:#5fbd7a'>UBCKRE: You are now in real gag talk mode.</p>"
                                 );
                             }
                         }
@@ -10957,7 +10957,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The theme command must be followed by a number between 0 and 3.<p>"
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The theme command must be followed by a number between 0 and 3.<p>"
                 );
             } else {
                 var theme = args;
@@ -11048,7 +11048,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The title command must be followed by a title.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The title command must be followed by a title.\n" +
                     "It will also change required parameters to get the title.\n" +
                     "You will be able to check the changes in your profile.\n" +
                     " \n" +
@@ -11455,7 +11455,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The trsee command must be followed by 3 numbers for visor, deafening module and chin strap.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The trsee command must be followed by 3 numbers for visor, deafening module and chin strap.\n" +
                     " \n" +
                     "Available visors:\n" +
                     "0 No visor - 1 transparent\n" +
@@ -11486,7 +11486,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             TechnoHelmet1.Property = ModularItemMergeModuleValues(TechnoHelmet1Config, [vtr, dtr, ctr]);
                             ChatRoomCharacterUpdate(Player);
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: The settings of your Techno Helmet have been modified.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: The settings of your Techno Helmet have been modified.</p>"
                             );
                         }
                     }
@@ -11497,11 +11497,11 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
 
     CommandCombine([{
         Tag: 'uhelp',
-        Description: "(category): displays the ULTRAbc commands.",
+        Description: "(category): displays the UBCKRE commands.",
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The help is organized into categories. Use <b>/uhelp</b> (category). List of categories:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The help is organized into categories. Use <b>/uhelp</b> (category). List of categories:\n" +
                     "<b>bondage</b> = commands related to bondage.\n" +
                     "<b>character</b> = commands related to your character.\n" +
                     "<b>chat</b> = commands with extra features in chat room.\n" +
@@ -11511,17 +11511,17 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                     "<b>fun</b> = commands related to fun, pain and pleasure.\n" +
                     "<b>kd</b> = info about kd command (for Kinky Dungeon).\n" +
                     "<b>misc</b> = special commands.\n" +
-                    "<b>settings</b> = commands to customize ULTRAbc.\n" +
+                    "<b>settings</b> = commands to customize UBCKRE.\n" +
                     "<b>talking</b> = commands related to talking.\n" +
                     "<b>visual</b> = commands related to animations and background.\n" +
                     "<b>zones</b> = commands related to game zones.\n" +
                     "Several commands require or allow to specify a target. It can be a real name or a member number.\n" +
-                    "Visit also our <a href='https://github.com/tetris245/ULTRAbc/wiki' target='_blank'>Wiki</a> and join this <a href='https://discord.gg/JUvYfSpCmN' target='_blank'>Discord</a></p>"
+                    "Visit also our <a href='https://github.com/tetris245/UBCKRE/wiki' target='_blank'>Wiki</a> and join this <a href='https://discord.gg/JUvYfSpCmN' target='_blank'>Discord</a></p>"
                 );
             }
             if (args === "bondage") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Bondage commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Bondage commands - * = more info when using\n" +
                     "<b>/hint</b> (target) (hint) = adds or changes a hint for all current locks with password.\n" +
                     "<b>/itemcolor</b> (colorcode) (target) = changes color on all current bindings. Color code must be in the format #000000\n" +
                     "<b>/lock</b> = adds locks on all lockable items. *.\n" +
@@ -11535,7 +11535,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "character") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Character commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Character commands - * = more info when using\n" +
                     "<b>/difficulty</b> (number) = changes game difficulty. *\n" +
                     "<b>/giveeverything</b> = gives every item.\n" +
                     "<b>/maxstatistics</b> = gives max statistics.\n" +
@@ -11551,7 +11551,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "chat") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Chat commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Chat commands - * = more info when using\n" +
                     "<b>/autokick</b> = toggles on auto kick for 0 day old accounts.\n" +
                     "<b>/bio</b> (target) = gives direct access to the profile description of any player in the chat room.\n" +
                     "<b>/erase</b> = erases chat.\n" +
@@ -11564,7 +11564,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "clothing") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Clothing commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Clothing commands - * = more info when using\n" +
                     "<b>/clothes</b> (target) = changes clothes.\n" +
                     "<b>/diaper</b> (options) = plays with diapers (ABDL game). *\n" +
                     "<b>/naked</b> (target) = removes clothes.\n" +
@@ -11575,7 +11575,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "escape") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Escape commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Escape commands - * = more info when using\n" +
                     "<b>/boost</b> = boosts all your skills for one hour.\n" +
                     "<b>/code</b> (target) = reveals codes for combination locks.\n" +
                     "<b>/ptcode</b> (target) = reveals portal link codes.\n" +
@@ -11593,14 +11593,14 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "extra") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Extra commands:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Extra commands:\n" +
 		    "<b>/mbsroom</b> = gives infos about MBS wheels of fortune in current chat room.\n" +
                     "<b>/xstatus</b> (add-on) = displays status of main settings for other add-ons. Available options with /xstatus.</p>"
                 );
             }
             if (args === "fun") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Fun commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Fun commands - * = more info when using\n" +
                     "<b>/cum</b> = causes an orgasm.\n" +
                     "<b>/hdvibe</b> (options) = changes the settings of worn High Duty Belt. *\n" +
                     "<b>/invisible</b> = becomes invisible (scripts must be allowed in BC settings).\n" +
@@ -11615,7 +11615,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "kd") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: How to use the kd command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: How to use the kd command:\n" +
                     "1 - Optionally, use <b>/kd devious</b> to toggle the Devious Challenge and/or <b>/kd debug</b> to enable the Debug Mode\n" +
                     "2 - Use twice <b>/kd</b> without any option to launch the game without cheat\n" +
                     "3 - After launching of the game, you can click on the Exit button to go back to the chatroom and use a command with cheat:\n" +
@@ -11632,17 +11632,17 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "misc") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Misc commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Misc commands - * = more info when using\n" +
                     "<b>/login</b> (accountname) (password) = logs in a new account.\n" +
                     "<b>/relog</b> = relogs.\n" +
-                    "<b>/uhelp</b> (category) = displays the ULTRAbc commands. *\n" +
-                    "<b>/ustatus</b> = displays status of ULTRAbc settings.\n" +
+                    "<b>/uhelp</b> (category) = displays the UBCKRE commands. *\n" +
+                    "<b>/ustatus</b> = displays status of UBCKRE settings.\n" +
                     "<b>/unrestrict</b> =  partially removes restrictions from game. * </p>\n"
                 );
             }
             if (args === "settings") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Settings commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Settings commands - * = more info when using\n" +
                     "<b>/carddesk</b> (desk) = changes default desk for Card Game.\n" +
 		    "<b>/cardextra</b> = gives all extra cards.\n" +
                     "<b>/cardfame</b> (fame) = sets high fame level for Card Game.\n" +
@@ -11655,7 +11655,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
 
             if (args === "talking") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Talking commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Talking commands - * = more info when using\n" +
                     "<b>/btalk</b> (stuffhere) = speaks once as a baby.\n" +
                     "<b>/gtalk</b> (talkmode) (stuffhere) = speaks once in specified gag talk. *\n" +
 		    "<b>/hear</b> (hearingmode) = forces a specific hearing mode. *\n" +
@@ -11671,7 +11671,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "visual") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Visual commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Visual commands - * = more info when using\n" +
                     "<b>/bg1</b> = adds hidden backgrounds to the selection screen.\n" +
                     "<b>/bg2</b> (number) = uses a Bondage Brawl background as standard background. /bg2 to get the list.\n" +
                     "<b>/bg3</b> (number) = uses a Bondage College background as custom background. /bg3 to get the list.\n" +
@@ -11685,7 +11685,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
             }
             if (args === "zones") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: Zones commands - * = more info when using\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: Zones commands - * = more info when using\n" +
                     "<b>/asylum</b> (minutes) = enters asylum, bypasses requirements. Specify minutes if you are a patient.\n" +
                     "<b>/chess</b> (difficulty) = starts chess, must specify difficulty first (1 easy - 2 normal - 3 hard).\n" +
                     "<b>/college</b> = enters college, bypasses requirements.\n" +
@@ -11781,7 +11781,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The unlock command:\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The unlock command:\n" +
                     "<b>/unlock</b> (target) (locktype).\n" +
                     "The target always needs to be specified.\n" +
                     "All locks of any type will be removed if you don't specify the lock type.\n" +
@@ -11938,7 +11938,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The unrestrict command partially removes restrictions from game. It must be followed by an option.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The unrestrict command partially removes restrictions from game. It must be followed by an option.\n" +
                     "Submissives: type <b>/unrestrict soft</b>\n" +
                     "Other players: type <b>/unrestrict total</b>\n" +
 		    "Notes: \n" +
@@ -11955,12 +11955,12 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 });
                 Player.Inventory.forEach(item => item.Asset.Enable = true);
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: Unrestricted softly. Can do some things you couldn't do before.\n" +
+                    "<p style='background-color:#5fbd7a'>UBCKRE: Unrestricted softly. Can do some things you couldn't do before.\n" +
                     "Store also includes hidden items. This can only be reset via a full relog.</p>"
                 );
             } else if (args === "total") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'>ULTRAbc: Unrestricted totally. Can do many things you couldn't do before.\n" +
+                    "<p style='background-color:#5fbd7a'>UBCKRE: Unrestricted totally. Can do many things you couldn't do before.\n" +
                     "Store also includes hidden items. This can only be reset via a full relog.</p>"
                 );
                 Player.CanInteract = function() {
@@ -12090,7 +12090,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The uset command must be followed by an option corresponding to an UBC setting.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The uset command must be followed by an option corresponding to an UBC setting.\n" +
                     " \n" +
                     "Available options:\n" +
                     "<b>autojoin</b> to toggle chat room auto-join feature\n" +
@@ -12111,13 +12111,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         AutojoinOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Auto-Join feature is disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Auto-Join feature is disabled.</p>"
                         );
                     } else {
                         AutojoinOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                             "<p style='background-color:#5fbd7a'>ULTRAbc: Auto-Join feature is enabled.</p>"
+                             "<p style='background-color:#5fbd7a'>UBCKRE: Auto-Join feature is enabled.</p>"
                         );
                     }
                 } else if (setting == "exitmode") {
@@ -12125,13 +12125,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         SlowleaveOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Fast exit mode is activated.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Fast exit mode is activated.</p>"
                         );
                     } else {
                         SlowleaveOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Slow exit mode is activated.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Slow exit mode is activated.</p>"
                         );
                     }
                 } else if (setting == "fullseed") {
@@ -12139,13 +12139,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         FullseedOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Full solution for intricate and high security locks is disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Full solution for intricate and high security locks is disabled.</p>"
                         );
                     } else {
                         FullseedOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Full solution for intricate and high security locks is enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Full solution for intricate and high security locks is enabled.</p>"
                         );
                     }
                 } else if (setting == "highfame") {
@@ -12154,14 +12154,14 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         ClubCardFameGoal = 100;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: High fame mode disabled in Bondage Club Card Game.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: High fame mode disabled in Bondage Club Card Game.</p>"
                         );
                     } else {
                         HighfameOn = true;
                         ClubCardFameGoal = cfame;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: High fame mode enabled in Bondage Club Card Game.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: High fame mode enabled in Bondage Club Card Game.</p>"
                         );
                     }
                 } else if (setting == "hotkeys") {
@@ -12169,13 +12169,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         HotkeysOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Hotkeys on numeric pad are disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Hotkeys on numeric pad are disabled.</p>"
                         );
                     } else {
                         HotkeysOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Hotkeys on numeric pad are enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Hotkeys on numeric pad are enabled.</p>"
                         );
                     }
                 } else if (setting == "magiccheat") {
@@ -12183,13 +12183,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         MagiccheatOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Cheat mode disabled in Bondage Brawl and Magic School.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Cheat mode disabled in Bondage Brawl and Magic School.</p>"
                         );
                     } else {
                         MagiccheatOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                             "<p style='background-color:#5fbd7a'>ULTRAbc: Cheat mode enabled in Bondage Brawl and Magic School.</p>"
+                             "<p style='background-color:#5fbd7a'>UBCKRE: Cheat mode enabled in Bondage Brawl and Magic School.</p>"
                         );
                     }
                 } else if (setting == "nowhisper") {                   
@@ -12197,13 +12197,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         NowhisperOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: No-whisper mode disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: No-whisper mode disabled.</p>"
                         );
                     } else {
                         NowhisperOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: No-whisper mode enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: No-whisper mode enabled.</p>"
                         );
                     }
                 } else if (setting == "npcpunish") {
@@ -12212,14 +12212,14 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         NPCpunish = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: NPC punishments enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: NPC punishments enabled.</p>"
                         );
                     } else {
                         Player.RestrictionSettings.BypassNPCPunishments = true;
                         NPCpunish = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: NPC punishments disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: NPC punishments disabled.</p>"
                         );
                     }
 		} else if (setting == "outbuttons") {
@@ -12227,13 +12227,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         OutbuttonsOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: OUT buttons hidden and disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: OUT buttons hidden and disabled.</p>"
                         );
                     } else {
                         OutbuttonsOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: OUT buttons displayed and enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: OUT buttons displayed and enabled.</p>"
                         );
                     }
                 } else if (setting == "sosbuttons") {
@@ -12241,13 +12241,13 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                         SosbuttonsOn = false;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Emergency buttons hidden and disabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Emergency buttons hidden and disabled.</p>"
                         );
                     } else {
                         SosbuttonsOn = true;
                         M_MOANER_saveControls();
                         ChatRoomSendLocal(
-                            "<p style='background-color:#5fbd7a'>ULTRAbc: Emergency buttons displayed and enabled.</p>"
+                            "<p style='background-color:#5fbd7a'>UBCKRE: Emergency buttons displayed and enabled.</p>"
                         );
                     }
                 }
@@ -12297,7 +12297,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The vrsee command must be followed by 3 numbers for background, mode and game.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The vrsee command must be followed by 3 numbers for background, mode and game.\n" +
                     " \n" +
                     "Available backgrounds:\n" +
                     "0 No background - 1 Virtual World\n" +
@@ -12328,7 +12328,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                             InteractiveVRHeadset.Property = ModularItemMergeModuleValues(InteractiveVRHeadsetConfig, [bvr, fvr, gvr]);
                             ChatRoomCharacterUpdate(Player);
                             ChatRoomSendLocal(
-                                "<p style='background-color:#5fbd7a'>ULTRAbc: The settings of your VR Headset have been modified.</p>"
+                                "<p style='background-color:#5fbd7a'>UBCKRE: The settings of your VR Headset have been modified.</p>"
                             );
                         }
                     }
@@ -12343,7 +12343,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
         Action: (args) => {
             if (args === "") {
                 ChatRoomSendLocal(
-                    "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The xstatus command must be followed by an option corresponding to an add-on.\n" +
+                    "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The xstatus command must be followed by an option corresponding to an add-on.\n" +
                     " \n" +
                     "Available options:\n" +
                     "bcar for BCAR\n" +
@@ -12485,7 +12485,7 @@ var bcModSDK=function(){"use strict";const e="1.1.0";function o(e){alert("Mod ER
                 var [targetname] = args;
                 if (!targetname) {
                     ChatRoomSendLocal(
-                        "<p style='background-color:#5fbd7a'><b>ULTRAbc</b>: The whisper command must be followed by a target and the message you want to whisper.\n" +
+                        "<p style='background-color:#5fbd7a'><b>UBCKRE</b>: The whisper command must be followed by a target and the message you want to whisper.\n" +
                         "You can omit the message if you want only to set the target for your whispers.</p>"
                     );
                 } else {
